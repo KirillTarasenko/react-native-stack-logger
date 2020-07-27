@@ -37,7 +37,7 @@ const requestAndroidStoragePermission = async () => {
 const printError = (error: any) =>{
   const errorStack = new Error().stack;
   StackLogger.printLog(`=====================\n   RN ERROR:   \n${error}\n=====================`
-   +  "... \nJS Stack: " + (errorStack || "").substring(0, 150) + "... \n==========================");
+   +  "... \nJS Stack: " + (errorStack || "").replace(/\(http:\/\/\S+\)/g, '') + "... \n==========================");
 
 }
 

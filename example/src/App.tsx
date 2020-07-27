@@ -14,9 +14,9 @@ componentWillMount(){
   StackLogger.requestAndroidStoragePermission();
 };
 
-componentDidCatch(error) {
-  StackLogger.printError(error);
-}
+// componentDidCatch(error) {
+//   StackLogger.printError(error);
+// }
 
   render(){
   return (
@@ -26,7 +26,7 @@ componentDidCatch(error) {
   StackLogger.printError("aa");
       }}><Text>Result: q</Text></TouchableOpacity>
       <TouchableOpacity onPress={()=>{
-        StackLogger.printLog(new Error().stack);
+        // StackLogger.printLog(new Error().stack);
       }}><Text>Stack: q</Text></TouchableOpacity>
     </View>
   );}
