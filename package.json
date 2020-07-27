@@ -1,6 +1,6 @@
 {
   "name": "react-native-stack-logger",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "description": "Logger for js stack",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -22,7 +22,6 @@
   "scripts": {
     "test": "jest",
     "typescript": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
@@ -75,12 +74,6 @@
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lint && yarn typescript"
-    }
   },
   "commitlint": {
     "extends": [

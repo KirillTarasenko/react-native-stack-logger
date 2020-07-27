@@ -10,11 +10,6 @@ BOOL consoleLog = YES;
 BOOL fileLog = NO;
 long maxFileSize = 512 * 1024; // 512 kb
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
-
-
 RCT_EXPORT_METHOD(printLog:(NSString *)content) {
     if (consoleLog) {
         NSLog(@"%@",content);
