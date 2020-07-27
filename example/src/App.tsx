@@ -3,10 +3,10 @@ import * as React from 'react';
 import { StyleSheet, View, Text , TouchableOpacity } from 'react-native';
 import StackLogger from 'react-native-stack-logger';
 
-StackLogger.setTag('Exa');
+StackLogger.setTag('Exi');
 StackLogger.setConsoleLogEnabled(true);
 StackLogger.setFileLogEnabled(true);
-StackLogger.setMaxFileSize(10 * 1024);
+StackLogger.setMaxFileSize(1024 * 1024);
 
 export default class App extends React.Component {
 
@@ -14,18 +14,19 @@ componentWillMount(){
   StackLogger.requestAndroidStoragePermission();
 };
 
-// componentDidCatch(error) {
-//   StackLogger.printError(error);
-// }
+componentDidCatch(error) {
+  StackLogger.printError(error);
+}
 
   render(){
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={()=>{
-        // StackLogger.printLog(new Date());
+
+  StackLogger.printError("aa");
       }}><Text>Result: q</Text></TouchableOpacity>
       <TouchableOpacity onPress={()=>{
-        // StackLogger.printLog(new Error().stack);
+        StackLogger.printLog(new Error().stack);
       }}><Text>Stack: q</Text></TouchableOpacity>
     </View>
   );}
